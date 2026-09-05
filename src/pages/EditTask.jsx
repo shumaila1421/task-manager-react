@@ -29,7 +29,7 @@ function EditTask() {
 
       <form
         onSubmit={handleSubmit(handleData)}
-        className="max-w-lg mx-auto h-screen flex flex-col gap-2 justify-center"
+        className="max-w-lg mx-auto h-screen flex flex-col gap-1 justify-center"
       >
         <Input
           label={"title"}
