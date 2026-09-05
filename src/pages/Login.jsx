@@ -9,7 +9,6 @@ function Login() {
   const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
   const { user, setUser } = useContext(AuthContext);
-  // console.log(data);
 
   function handleData(data) {
     console.log(data);
