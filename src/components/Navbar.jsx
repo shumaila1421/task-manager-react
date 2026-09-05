@@ -17,7 +17,7 @@ function Navbar() {
       {user && (
         <nav className="flex gap-4 items-center">
           <Link to="/">Home</Link>
-          <Link to="/">All Task</Link>
+          <Link to="/all-task">All Task</Link>
           <Link to="/add-task">Add Task</Link>
           <Button type="button" text="Logout" onClick={handleClick} />
         </nav>

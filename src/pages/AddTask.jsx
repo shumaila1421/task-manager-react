@@ -2,12 +2,17 @@ import { useForm } from "react-hook-form";
 import Navbar from "../components/Navbar";
 import Input from "../components/ui/Input";
 import Button from "../components/ui/Button";
+import { useContext } from "react";
+import { TaskContext } from "../context/TaskContext";
 
 function AddTask() {
   const { register, handleSubmit } = useForm();
 
+  const { addTask } = useContext(TaskContext);
+
   function handleData(data) {
     console.log(data);
+    addTask(data);
   }
 
   return (
@@ -30,10 +35,10 @@ function AddTask() {
           placeholder="Description"
           register={register}
         />
-
+        <label className="font-semibold capitalize">Task Status</label>
         <select
           {...register("status")}
-          className="px-3 py-2 border border-gray-300"
+          className="px-3 py-2 border border-gray-300 rounded my-1"
         >
           <option>Task Status</option>
           <option value="todo">To Do</option>
@@ -41,7 +46,11 @@ function AddTask() {
           <option value="done">Done</option>
         </select>
 
-        <select {...register("priority")}>
+        <label className="font-semibold capitalize">Task Priority</label>
+        <select
+          {...register("priority")}
+          className="px-3 py-2 border border-gray-300 rounded my-1"
+        >
           <option>Task Priority</option>
           <option value="low">Low</option>
           <option value="medium">Medium</option>
