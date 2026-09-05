@@ -4,16 +4,22 @@ import Input from "../components/ui/Input";
 import Button from "../components/ui/Button";
 import { useContext } from "react";
 import { TaskContext } from "../context/TaskContext";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
-function AddTask() {
-  const { register, handleSubmit } = useForm();
+function EditTask() {
+  const { state } = useLocation();
+  const { register, handleSubmit } = useForm({
+    defaultValues: state,
+  });
   const navigate = useNavigate();
-  const { addTask } = useContext(TaskContext);
+
+  console.log(location);
+  const { updateTask } = useContext(TaskContext);
 
   function handleData(data) {
     console.log(data);
-    addTask(data);
+    updateTask(state.id, data);
+
     navigate("/all-tasks");
   }
 
@@ -64,4 +70,4 @@ function AddTask() {
   );
 }
 
-export default AddTask;
+export default EditTask;
