@@ -7,7 +7,7 @@ function TaskStore({ children }) {
 
   function addTask(task) {
     let newTask = {
-      id: Math.floor(Math.random() * 1000),
+      id: Date.now(),
       ...task,
     };
     setTasks([...tasks, newTask]);
@@ -22,7 +22,7 @@ function TaskStore({ children }) {
 
   function updateTask(id, update) {
     let updatedTasks = tasks.map(function (val) {
-      if (val.id == id) {
+      if (val.id === id) {
         return {
           ...val,
           title: update.title,
