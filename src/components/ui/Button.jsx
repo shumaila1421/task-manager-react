@@ -1,4 +1,4 @@
-function Button({ type, text = "Login", onClick }) {
+function Button({ type, text, onClick }) {
   return (
     <button
       type={type}

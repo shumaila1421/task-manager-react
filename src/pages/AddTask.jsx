@@ -12,7 +12,6 @@ function AddTask() {
   const { addTask } = useContext(TaskContext);
 
   function handleData(data) {
-    console.log(data);
     addTask(data);
     navigate("/all-tasks");
   }

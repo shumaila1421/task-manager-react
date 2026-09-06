@@ -19,10 +19,7 @@ function Login() {
   return (
     <div className="max-w-md mx-auto h-screen flex flex-col gap-2 justify-center">
       <h1 className="font-bold text-xl">Login to your account</h1>
-      <p className="text-sm">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis cumque
-        architecto vero saepe dignissimos! Fuga fugiat vero dolorum dolore rem.
-      </p>
+      <p className="text-sm">Manage your tasks efficiently.</p>
 
       <form onSubmit={handleSubmit(handleData)}>
         <Input
@@ -37,7 +34,7 @@ function Login() {
           type="password"
           placeholder="Enter your password"
         />
-        <Button type="submit" />
+        <Button type="submit" text="Login" />
       </form>
 
       <Link to="/" className="text-sm text-blue-500 my-3 ">

@@ -13,11 +13,9 @@ function EditTask() {
   });
   const navigate = useNavigate();
 
-  console.log(location);
   const { updateTask } = useContext(TaskContext);
 
   function handleData(data) {
-    console.log(data);
     updateTask(state.id, data);
 
     navigate("/all-tasks");
