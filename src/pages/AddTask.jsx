@@ -7,7 +7,11 @@ import { TaskContext } from "../context/TaskContext";
 import { useNavigate } from "react-router-dom";
 
 function AddTask() {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   const navigate = useNavigate();
   const { addTask } = useContext(TaskContext);
 
@@ -29,19 +33,21 @@ function AddTask() {
           type="text"
           placeholder="Task Title"
           register={register}
+          error={errors.title}
         />
         <Input
           label={"description"}
           type="text"
           placeholder="Description"
           register={register}
+          error={errors.desctiption}
         />
         <label className="font-semibold capitalize">Task Status</label>
         <select
           {...register("status")}
           className="px-3 py-2 border border-gray-300 rounded my-1"
         >
-          <option>Task Status</option>
+          <option value="disabled">Task Status</option>
           <option value="todo">To Do</option>
           <option value="inprogress">In Progress</option>
           <option value="done">Done</option>
@@ -52,7 +58,7 @@ function AddTask() {
           {...register("priority")}
           className="px-3 py-2 border border-gray-300 rounded my-1"
         >
-          <option>Task Priority</option>
+          <option value="disabled">Task Priority</option>
           <option value="low">Low</option>
           <option value="medium">Medium</option>
           <option value="high">High</option>

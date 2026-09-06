@@ -46,7 +46,7 @@ function EditTask() {
           {...register("status")}
           className="px-3 py-2 border border-gray-300 rounded my-1"
         >
-          <option>Task Status</option>
+          <option value="disabled">Task Status</option>
           <option value="todo">To Do</option>
           <option value="inprogress">In Progress</option>
           <option value="done">Done</option>
@@ -57,12 +57,12 @@ function EditTask() {
           {...register("priority")}
           className="px-3 py-2 border border-gray-300 rounded my-1"
         >
-          <option>Task Priority</option>
+          <option value="disabled">Task Priority</option>
           <option value="low">Low</option>
           <option value="medium">Medium</option>
           <option value="high">High</option>
         </select>
-        <Button text="Add Task" type="submit" />
+        <Button text="Update Task" type="submit" />
       </form>
     </div>
   );

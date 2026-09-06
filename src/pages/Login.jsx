@@ -7,7 +7,11 @@ import { AuthContext } from "../context/AuthContext";
 
 function Login() {
   const navigate = useNavigate();
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   const { user, setUser } = useContext(AuthContext);
 
   function handleData(data) {
@@ -27,12 +31,14 @@ function Login() {
           label="email"
           type="email"
           placeholder="Enter your email"
+          error={errors.email}
         />
         <Input
           register={register}
           label="password"
           type="password"
           placeholder="Enter your password"
+          error={errors.password}
         />
         <Button type="submit" text="Login" />
       </form>
